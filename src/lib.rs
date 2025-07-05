@@ -1,3 +1,4 @@
+#![feature(rustc_private)]
 // SPDX-License-Identifier: Apache-2.0
 
 //! Rust bindings for `libclang`.
