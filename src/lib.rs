@@ -7,7 +7,7 @@
 //!
 //! Note that the documentation on https://docs.rs for this crate assumes usage
 //! of the `runtime` Cargo feature as well as the Cargo feature for the latest
-//! supported version of `libclang` (e.g., `clang_11_0`), neither of which are
+//! supported version of `libclang` (e.g., `clang_20_0`), neither of which are
 //! enabled by default.
 //!
 //! Due to the usage of the `runtime` Cargo feature, this documentation will

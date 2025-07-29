@@ -13,7 +13,7 @@ Released under the Apache License 2.0.
 
 ## [Documentation](https://docs.rs/clang-sys)
 
-Note that the documentation on https://docs.rs for this crate assumes usage of the `runtime` Cargo feature as well as the Cargo feature for the latest supported version of `libclang` (e.g., `clang_16_0`), neither of which are enabled by default.
+Note that the documentation on https://docs.rs for this crate assumes usage of the `runtime` Cargo feature as well as the Cargo feature for the latest supported version of `libclang` (e.g., `clang_20_0`), neither of which are enabled by default.
 
 Due to the usage of the `runtime` Cargo feature, this documentation will contain some additional types and functions to manage a dynamically loaded `libclang` instance at runtime.
 
@@ -28,6 +28,8 @@ To target a version of `libclang`, enable a Cargo features such as one of the fo
 * etc...
 * `clang_17_0` - requires `libclang` 17.0 or later
 * `clang_18_0` - requires `libclang` 18.0 or later
+* `clang_19_0` - requires `libclang` 19.0 or later
+* `clang_20_0` - requires `libclang` 20.0 or later
 
 If you do not enable one of these features, the API provided by `libclang` 3.5 will be available by default.
 
