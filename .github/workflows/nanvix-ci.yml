@@ -30,11 +30,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  detect_runner_home:
+    runs-on: [self-hosted]
+    outputs:
+      home: ${{ steps.discover.outputs.home }}
+    steps:
+      - name: Capture runner home
+        id: discover
+        run: echo "home=$HOME" >> "$GITHUB_OUTPUT"
+
   build:
+    needs: detect_runner_home
     uses: nanvix/workflows/.github/workflows/build-rust.yml@main
     with:
       rust_toolchain: nanvix-x86
       report_failure: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'nanvix-major-release' }}
       failure_issue_assignees: '["ppenna"]'
       environment_variables: |
-        {"LIBCLANG_PATH":"$HOME/toolchain/lib/libclang.so"}
+        {"LIBCLANG_PATH":"${{ needs.detect_runner_home.outputs.home }}/toolchain/lib/libclang.so"}
