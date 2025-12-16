@@ -36,4 +36,5 @@ jobs:
       rust_toolchain: nanvix-x86
       report_failure: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'nanvix-major-release' }}
       failure_issue_assignees: '["ppenna"]'
-      environment_variables: '{"LIBCLANG_PATH":"$HOME/toolchain/lib/libclang.so"}'
+      environment_variables: |
+        {"LIBCLANG_PATH":"${{ env.HOME }}/toolchain/lib/libclang.so"}
